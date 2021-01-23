@@ -1,0 +1,22 @@
+
+
+<button mat-mini-fab (click)="erase()">
+  <mat-icon>change_circle</mat-icon>
+</button>
+<button mat-mini-fab (click)="erase()">
+  <mat-icon>skip_next</mat-icon>
+</button>
+<br>
+<mat-card class="bubble">
+  <div *ngIf="firstClassification?.label !== undefined || firstClassification?.label !== '';else Dots">
+    <p><mat-icon>chat_bubble_outlined</mat-icon> is it {{firstClassification?.label || ''}}?</p>
+  </div>
+  <ng-template #Dots>
+    <p>...</p>
+  </ng-template>
+</mat-card>
+
+<!--<h2>{{firstClassification?.label || ''}}</h2>-->
+<!--<h3>{{firstClassification?.confidence || ''}}%</h3>-->
+<!--<h2>{{secondClassification?.label || ''}}</h2>-->
+<!--<h3>{{secondClassification?.confidence || ''}}%</h3>-->
